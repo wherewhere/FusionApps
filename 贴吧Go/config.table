@@ -1,0 +1,240 @@
+{
+  ["web_control"]	= {
+      [1]	= {
+          ["remove_element"]	= "tag,j_top_bar blue_kit,tab_head tab_index_head j_tab_index_head blue_kit light_tab_head,footer_read,blue_kit blue_kit_light,ui_search j_tab_con_search,footer,addbodybottom,client-blue_bar,appPromote_wrapper,activity-banner,blue_kit blue_kit_top,daoliu,pb_reply_postor_wrap,daoliu-content-wrap,img_desc,list_item_wrapper j_click_stats,ti_item j_click_stats,tl_shadow tl_shadow_new o93c81b39a,panel_bottom,@ID(i_head),blue_kit_outer_w,hongbao_page_pop_back hongbao_page_pop_common,hongbao_background,icon_tieba_more,icon_tieba_logo blue_kit_btn_logo" ;
+          ["url"]	= "tieba.baidu.com" ;
+          ["js"]	= "document.getElementsByClassName(\"expand-all\")[0].click()" ;
+          } ;
+      [2]	= {
+          ["remove_element"]	= "pass-header,pass-header-title" ;
+          ["url"]	= "wappass.baidu.com" ;
+          ["js"]	= "" ;
+          } ;
+      [3]	= {
+          ["remove_element"]	= "footer-links,ID(nav-outer),under,navbar-header,footer-record,footer-copyright,navbar navbar-fixed-top header" ;
+          ["url"]	= "www.coolapk.com" ;
+          ["js"]	= "" ;
+          } ;
+      } ;
+  ["view_attribute"]	= {
+      ["顶栏高度"]	= "56dp" ;
+      ["搜索栏圆角弧度"]	= "2dp" ;
+      ["顶栏标题"]	= "" ;
+      ["搜索栏阴影强度"]	= "2dp" ;
+      ["侧滑栏宽度"]	= "240dp" ;
+      ["顶栏阴影强度"]	= "2dp" ;
+      } ;
+  ["events"]	= {
+      ["收到新标题"]	= "--浏览器加载新页面并获得新标题时执行的事件\
+\
+--接收参数\
+新标题=..." ;
+      ["网页即将加载"]	= "--浏览器即将加载新的网页时执行的事件\
+\
+--接收参数\
+浏览器对象,网页链接=..." ;
+      ["程序启动"]	= "url2=\"tieba.fooor.cn\"\
+--自定义一个叫url2的函数\
+\
+\
+function saveCookie(url2)--保存cookie\
+perf=this.getSharedPreferences(\"Cookie\",0)\
+perf.edit().putString(url2,CookieManager.getInstance().getCookie(url2)).apply()\
+end\
+--定义保存\
+\
+\
+function readCookie(url2)--读取cookie\
+pref=this.getSharedPreferences(\"Cookie\",0)\
+CookieManager.getInstance().setCookie(url2,pref.getString(url2,\"\"))\
+end\
+--定义读取\
+\
+\
+function removeCookie(url2)--删除cookie\
+this.getSharedPreferences(\"Cookie\",0).edit().remove(url2).apply()\
+CookieManager.getInstance().setCookie(url2,\"\")\
+CookieManager.getInstance().removeAllCookie()\
+end\
+--定义注销\
+\
+readCookie(url2)\
+\
+function onPause()\
+saveCookie(url2)\
+end\
+\
+function onKeyDown(key,event)\
+  if(key==4)then\
+    if(webView.canGoBack())then\
+      webView.goBack()\
+    else\
+      saveCookie(url2)\
+      appinfo=this.getPackageManager().getApplicationInfo(this.getPackageName(),0)\
+      applabel=this.getPackageManager().getApplicationLabel(appinfo)\
+      退出确认=对话框()\
+      .设置标题(\"退出 \"..applabel..\" ？\")\
+      .设置消息(\"您正在退出 \"..applabel..\" ，请确认\")\
+      .设置积极按钮(\"退出\",function()退出程序()end)\
+      .设置消极按钮(\"取消\")\
+      .show()\
+    end\
+    return true\
+  end\
+end\
+\
+泡沫对话框(92)\
+.设置标题(\"登录\")\
+.设置消息(\"登录百度账号(登录或切换账号请前往侧边栏 > 切换账号)\")\
+.设置积极按钮(\"现在登录\",function()加载网页(\"https://wappass.baidu.com/passport/?login&tpl=wimn&subpro=wimn&regtype=1&u=https%3A%2F%2Ftieba.baidu.com%23logined\")\
+  显示消息(\"点击了确定\")\
+end)\
+.设置消极按钮(\"先逛逛，稍后再登\")\
+.显示()\
+--程序启动时会执行的事件" ;
+      ["网页加载完毕"]	= "--网页加载完毕后执行的事件\
+\
+--接收参数\
+浏览器对象,网页链接=..." ;
+      } ;
+  ["fltBtn"]	= {
+      ["图标"]	= "" ;
+      ["显示"]	= true ;
+      ["点击事件"]	= "刷新网页()\
+--悬浮按钮点击时执行的事件" ;
+      } ;
+  ["sidebar"]	= {
+      ["启用"]	= true ;
+      ["items"]	= {
+          [1]	= {
+              ["icon"]	= "drawable/view_list.png" ;
+              ["name"]	= "吧分类" ;
+              ["onClick"]	= "加载网页(\"https://tieba.baidu.com/mo/q/catalog?tn=level1&st_type=catalog_level1_all\")" ;
+              } ;
+          [2]	= {
+              ["icon"]	= "drawable/fire.png" ;
+              ["name"]	= "吧友热议" ;
+              ["onClick"]	= "加载网页(\"https://tieba.baidu.com/mo/q/hotMessage/list\")" ;
+              } ;
+          [3]	= {
+              ["icon"]	= "drawable/star.png" ;
+              ["name"]	= "我的收藏" ;
+              ["onClick"]	= "加载网页(\"https://tieba.baidu.com/home/collect?st_type=source&st_param=index\")" ;
+              } ;
+          [4]	= {
+              ["icon"]	= "drawable/pencil.png" ;
+              ["name"]	= "贴吧云签" ;
+              ["onClick"]	= "进入子页面(\"贴吧云签到\")" ;
+              } ;
+          [5]	= {
+              ["icon"]	= "drawable/account_switch.png" ;
+              ["name"]	= "切换账号" ;
+              ["onClick"]	= "加载网页(\"https://wappass.baidu.com/passport/?login&tpl=wimn&subpro=wimn&regtype=1&u=https%3A%2F%2Ftieba.baidu.com%23logined\")" ;
+              } ;
+          [6]	= {
+              ["icon"]	= "drawable/share_variant.png" ;
+              ["name"]	= "分享应用" ;
+              ["onClick"]	= "弹出消息(\"还没有😙\")" ;
+              } ;
+          [7]	= {
+              ["icon"]	= "drawable/information.png" ;
+              ["name"]	= "关于" ;
+              ["onClick"]	= "对话框()\
+.设置标题(\"关于\")\
+.设置消息(\"使用FA制作。\")\
+.设置积极按钮(\"查看更多\",function()弹出消息(\"还没有😂\")\
+  显示消息(\"点击了确定\")\
+end)\
+.设置消极按钮(\"知道了\")\
+.显示()" ;
+              } ;
+          } ;
+      ["启用顶部图片"]	= true ;
+      } ;
+  ["global_js"]	= "" ;
+  ["switch"]	= {
+      ["支持滑动页面"]	= true ;
+      ["横屏"]	= false ;
+      ["显示状态栏"]	= true ;
+      ["启用启动图"]	= false ;
+      } ;
+  ["web"]	= {
+      ["启用进度条"]	= true ;
+      ["启动网页"]	= "https://tieba.baidu.com" ;
+      ["支持打开外部应用"]	= false ;
+      ["浏览器用户标识"]	= "默认" ;
+      ["启用长按菜单"]	= true ;
+      ["网页沉浸"]	= false ;
+      } ;
+  ["colors"]	= {
+      ["进度条"]	= "#00000000" ;
+      ["顶栏部件触摸"]	= "#22ffffff" ;
+      ["顶栏部件"]	= "#ffffffff" ;
+      ["悬浮按钮"]	= "#ff242842" ;
+      ["悬浮按钮图标"]	= "#ffffffff" ;
+      ["顶栏"]	= "#ff262b42" ;
+      ["搜索栏部件触摸"]	= "#44000000" ;
+      ["搜索栏提示文字"]	= "#80000000" ;
+      ["导航栏"]	= "#ff141828" ;
+      ["搜索栏部件"]	= "#ff888888" ;
+      ["搜索栏背景"]	= "#ffffffff" ;
+      ["侧滑栏背景"]	= "#ffffffff" ;
+      ["侧滑栏列表文字"]	= "#ff333333" ;
+      ["侧滑栏列表图标"]	= "#ff757575" ;
+      } ;
+  ["toolbar"]	= {
+      ["搜索URL"]	= "https://tieba.baidu.com/mo/q/m?word=%s&tn6=bdISP&tn4=bdKSW&tn7=bdPSB&lm=16842752&lp=6093&sub4=%E8%BF%9B%E5%90%A7" ;
+      ["启用搜索功能"]	= true ;
+      ["menus"]	= {
+          [1]	= {
+              ["name"]	= "高级搜索" ;
+              ["onClick"]	= "加载网页(\"https://tieba.baidu.com/mo/q/searchpage?page=index\")" ;
+              } ;
+          [2]	= {
+              ["name"]	= "我的提醒" ;
+              ["onClick"]	= "加载网页(\"https://tieba.baidu.com/mo/q/msg\")" ;
+              } ;
+          [3]	= {
+              ["name"]	= "返回顶部" ;
+              ["onClick"]	= "返回网页顶部()" ;
+              } ;
+          [4]	= {
+              ["name"]	= "退出登录" ;
+              ["onClick"]	= "removeCookie(url2)\
+刷新网页()" ;
+              } ;
+          [5]	= {
+              ["name"]	= "退出应用" ;
+              ["onClick"]	= "saveCookie(url2)\
+appinfo=this.getPackageManager().getApplicationInfo(this.getPackageName(),0)\
+applabel=this.getPackageManager().getApplicationLabel(appinfo)\
+退出确认=对话框()\
+.设置标题(\"退出 \"..applabel..\" ？\")\
+.设置消息(\"您正在退出 \"..applabel..\" ，请确认\")\
+.设置积极按钮(\"退出\",function()退出程序()end)\
+.设置消极按钮(\"取消\")\
+.show()" ;
+              } ;
+          } ;
+      ["icon_btns"]	= {
+          [4]	= {
+              ["icon"]	= "account" ;
+              ["onClick"]	= "加载网页(\"https://tieba.baidu.com/?page=user\")" ;
+              } ;
+          [1]	= {
+              ["icon"]	= "home" ;
+              ["onClick"]	= "加载网页(\"https://tieba.baidu.com/?page=like\")" ;
+              } ;
+          [2]	= {
+              ["icon"]	= "eye" ;
+              ["onClick"]	= "加载网页(\"https://tieba.baidu.com/?page=selected\")" ;
+              } ;
+          [3]	= {
+              ["icon"]	= "apple_safari" ;
+              ["onClick"]	= "加载网页(\"https://tieba.baidu.com/?page=discovery\")" ;
+              } ;
+          } ;
+      ["搜索框提示"]	= "进吧" ;
+      ["输入栏模式"]	= true ;
+      } ;
+  } ;

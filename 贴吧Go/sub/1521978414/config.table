@@ -1,0 +1,221 @@
+{
+  ["view_attribute"]	= {
+      ["搜索栏阴影强度"]	= "2dp" ;
+      ["侧滑栏宽度"]	= "240dp" ;
+      ["顶栏阴影强度"]	= "2dp" ;
+      ["搜索栏圆角弧度"]	= "2dp" ;
+      ["顶栏标题"]	= "贴吧云签到" ;
+      ["顶栏高度"]	= "56dp" ;
+      } ;
+  ["colors"]	= {
+      ["进度条"]	= "#00000000" ;
+      ["顶栏部件"]	= "#ffffffff" ;
+      ["搜索栏部件触摸"]	= "#44000000" ;
+      ["搜索栏部件"]	= "#ff888888" ;
+      ["搜索栏提示文字"]	= "#80000000" ;
+      ["悬浮按钮"]	= "#ff009688" ;
+      ["侧滑栏列表文字"]	= "#ff333333" ;
+      ["导航栏"]	= "#ff005a54" ;
+      ["顶栏部件触摸"]	= "#22000000" ;
+      ["顶栏"]	= "#ff009688" ;
+      ["侧滑栏背景"]	= "#ffffffff" ;
+      ["搜索栏背景"]	= "#ffffffff" ;
+      ["悬浮按钮图标"]	= "#ffffffff" ;
+      ["侧滑栏列表图标"]	= "#ff757575" ;
+      } ;
+  ["web"]	= {
+      ["启用进度条"]	= true ;
+      ["网页沉浸"]	= false ;
+      ["浏览器用户标识"]	= "默认" ;
+      ["支持打开外部应用"]	= true ;
+      ["启用长按菜单"]	= true ;
+      ["启动网页"]	= "http://tieba.fooor.cn" ;
+      } ;
+  ["global_js"]	= "" ;
+  ["events"]	= {
+      ["网页即将加载"]	= "--浏览器即将加载新的网页时执行的事件\
+\
+--接收参数\
+浏览器对象,网页链接=..." ;
+      ["程序启动"]	= "url2=\"tieba.fooor.cn\"\
+--自定义一个叫url2的函数\
+\
+\
+function saveCookie(url2)--保存cookie\
+perf=this.getSharedPreferences(\"Cookie\",0)\
+perf.edit().putString(url2,CookieManager.getInstance().getCookie(url2)).apply()\
+end\
+--定义保存\
+\
+\
+function readCookie(url2)--读取cookie\
+pref=this.getSharedPreferences(\"Cookie\",0)\
+CookieManager.getInstance().setCookie(url2,pref.getString(url2,\"\"))\
+end\
+--定义读取\
+\
+\
+function removeCookie(url2)--删除cookie\
+this.getSharedPreferences(\"Cookie\",0).edit().remove(url2).apply()\
+CookieManager.getInstance().setCookie(url2,\"\")\
+CookieManager.getInstance().removeAllCookie()\
+end\
+--定义注销\
+\
+readCookie(url2)\
+\
+function onPause()\
+saveCookie(url2)\
+end\
+\
+function onKeyDown(key,event)\
+  if(key==4)then\
+    if(webView.canGoBack())then\
+      webView.goBack()\
+    else\
+      saveCookie(url2)\
+      appinfo=this.getPackageManager().getApplicationInfo(this.getPackageName(),0)\
+      applabel=this.getPackageManager().getApplicationLabel(appinfo)\
+      退出确认=对话框()\
+      .设置标题(\"返回 \"..applabel..\" ？\")\
+      .设置消息(\"您正在返回 \"..applabel..\" ，请确认\")\
+      .设置积极按钮(\"返回\",function()退出程序()end)\
+      .设置消极按钮(\"取消\")\
+      .show()\
+    end\
+    return true\
+  end\
+end\
+--程序启动时会执行的事件" ;
+      ["网页加载完毕"]	= "--网页加载完毕后执行的事件\
+\
+--接收参数\
+浏览器对象,网页链接=..." ;
+      ["收到新标题"]	= "--浏览器加载新页面并获得新标题时执行的事件\
+\
+--接收参数\
+新标题=..." ;
+      } ;
+  ["web_control"]	= {
+      [1]	= {
+          ["url"]	= "http://tieba.fooor.cn/index.php?mod=login" ;
+          ["remove_element"]	= "navbar-brand,navbar-toggle,navbar-header,navbar navbar-default" ;
+          ["js"]	= "" ;
+          } ;
+      [2]	= {
+          ["url"]	= "tieba.fooor.cn" ;
+          ["remove_element"]	= "navbar-brand,navbar-toggle,navbar-header,navbar navbar-default" ;
+          ["js"]	= "" ;
+          } ;
+      [3]	= {
+          ["url"]	= "www.coolapk.com" ;
+          ["remove_element"]	= "footer-links,ID(nav-outer),under,navbar-header,footer-record,footer-copyright,navbar navbar-fixed-top header" ;
+          ["js"]	= "document.body.style.paddingTop=0" ;
+          } ;
+      } ;
+  ["sidebar"]	= {
+      ["启用顶部图片"]	= true ;
+      ["启用"]	= true ;
+      ["items"]	= {
+          [1]	= {
+              ["icon"]	= "drawable/home.png" ;
+              ["onClick"]	= "加载网页(\"http://tieba.fooor.cn/index.php\")" ;
+              ["name"]	= "首页" ;
+              } ;
+          [2]	= {
+              ["icon"]	= "drawable/account.png" ;
+              ["onClick"]	= "加载网页(\"http://tieba.fooor.cn/index.php?mod=set\")" ;
+              ["name"]	= "个人设置" ;
+              } ;
+          [3]	= {
+              ["icon"]	= "drawable/link_variant.png" ;
+              ["onClick"]	= "加载网页(\"http://tieba.fooor.cn/index.php?mod=baiduid\")" ;
+              ["name"]	= "百度账号管理" ;
+              } ;
+          [4]	= {
+              ["icon"]	= "drawable/calendar.png" ;
+              ["onClick"]	= "加载网页(\"http://tieba.fooor.cn/index.php?mod=showtb\")" ;
+              ["name"]	= "云签到设置和日志" ;
+              } ;
+          [5]	= {
+              ["icon"]	= "drawable/help_circle.png" ;
+              ["onClick"]	= "加载网页(\"http://tieba.fooor.cn/index.php?plugin=dl_pages&page=dl_pages_one\")" ;
+              ["name"]	= "使用帮助" ;
+              } ;
+          [6]	= {
+              ["icon"]	= "drawable/alert_circle.png" ;
+              ["onClick"]	= "加载网页(\"http://tieba.fooor.cn/index.php?plugin=mok_bduss\")" ;
+              ["name"]	= "Bduss有效性检测" ;
+              } ;
+          [7]	= {
+              ["icon"]	= "drawable/cloud.png" ;
+              ["onClick"]	= "加载网页(\"http://tieba.fooor.cn/index.php?plugin=wmzz_post\")" ;
+              ["name"]	= "帖子云灌水" ;
+              } ;
+          [8]	= {
+              ["icon"]	= "drawable/share_variant.png" ;
+              ["onClick"]	= "分享文本(\"分享 贴吧云签到： 分享自@酷安网  https://www.coolapk.com/apk/com.android.tiebayunqiandao \")" ;
+              ["name"]	= "分享应用" ;
+              } ;
+          [9]	= {
+              ["icon"]	= "drawable/library_books.png" ;
+              ["onClick"]	= "对话框()\
+.设置标题(\"关于\")\
+.设置消息(\"使用Fusion App制作。\")\
+.设置积极按钮(\"查看更多\",function()加载网页(\"https://www.coolapk.com/apk/com.android.tiebayunqiandao\")\
+  显示消息(\"点击了确定\")\
+end)\
+.设置消极按钮(\"知道了\")\
+.显示()" ;
+              ["name"]	= "关于" ;
+              } ;
+          } ;
+      } ;
+  ["fltBtn"]	= {
+      ["点击事件"]	= "刷新网页()\
+--悬浮按钮点击时执行的事件" ;
+      ["图标"]	= "" ;
+      ["显示"]	= true ;
+      } ;
+  ["switch"]	= {
+      ["横屏"]	= false ;
+      ["支持滑动页面"]	= true ;
+      ["启用启动图"]	= true ;
+      ["显示状态栏"]	= true ;
+      } ;
+  ["toolbar"]	= {
+      ["搜索框提示"]	= "" ;
+      ["icon_btns"]	= {
+          } ;
+      ["menus"]	= {
+          [4]	= {
+              ["onClick"]	= "saveCookie(url2)\
+appinfo=this.getPackageManager().getApplicationInfo(this.getPackageName(),0)\
+applabel=this.getPackageManager().getApplicationLabel(appinfo)\
+退出确认=对话框()\
+.设置标题(\"返回 \"..applabel..\" ？\")\
+.设置消息(\"您正在返回 \"..applabel..\" ，请确认\")\
+.设置积极按钮(\"返回\",function()退出程序()end)\
+.设置消极按钮(\"取消\")\
+.show()" ;
+              ["name"]	= "返回贴吧 Go" ;
+              } ;
+          [1]	= {
+              ["onClick"]	= "加载网页(\"http://tieba.fooor.cn/index.php?mod=reg\")" ;
+              ["name"]	= "注册" ;
+              } ;
+          [2]	= {
+              ["onClick"]	= "removeCookie(url2)\
+刷新网页()" ;
+              ["name"]	= "注销" ;
+              } ;
+          [3]	= {
+              ["onClick"]	= "加载网页(\"http://tieba.fooor.cn/index.php?pub_plugin=fyy_newlogin\")" ;
+              ["name"]	= "花式登录" ;
+              } ;
+          } ;
+      ["搜索URL"]	= "" ;
+      ["输入栏模式"]	= false ;
+      ["启用搜索功能"]	= false ;
+      } ;
+  } ;
