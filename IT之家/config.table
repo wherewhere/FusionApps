@@ -1,0 +1,109 @@
+{
+  ["web"]	= {
+      ["支持打开外部应用"]	= true ;
+      ["网页沉浸"]	= false ;
+      ["浏览器用户标识"]	= "默认" ;
+      ["启动网页"]	= "https://m.ithome.com" ;
+      ["启用长按菜单"]	= true ;
+      ["启用进度条"]	= true ;
+      } ;
+  ["web_control"]	= {
+      [1]	= {
+          ["js"]	= "document.body.style.paddingTop=0" ;
+          ["remove_element"]	= "hd,op,open-app,down-app-box,ft-item open-app,ruanmei-footer,rm-ft-box,hot-app-box, title,search-hd,head-box" ;
+          ["url"]	= "m.ithome.com" ;
+          } ;
+      [2]	= {
+          ["js"]	= "" ;
+          ["remove_element"]	= "" ;
+          ["url"]	= "m.lapin365.com" ;
+          } ;
+      [3]	= {
+          ["js"]	= "" ;
+          ["remove_element"]	= "if,nav-item nav-item-7" ;
+          ["url"]	= "quan.ithome.com" ;
+          } ;
+      } ;
+  ["sidebar"]	= {
+      ["启用"]	= true ;
+      ["items"]	= {
+          } ;
+      ["启用顶部图片"]	= false ;
+      } ;
+  ["view_attribute"]	= {
+      ["搜索栏阴影强度"]	= "2dp" ;
+      ["顶栏标题"]	= "IT之家" ;
+      ["侧滑栏宽度"]	= "240dp" ;
+      ["顶栏阴影强度"]	= "2dp" ;
+      ["搜索栏圆角弧度"]	= "2dp" ;
+      ["顶栏高度"]	= "56dp" ;
+      } ;
+  ["fltBtn"]	= {
+      ["图标"]	= "" ;
+      ["显示"]	= false ;
+      ["点击事件"]	= "--悬浮按钮点击时执行的事件" ;
+      } ;
+  ["toolbar"]	= {
+      ["搜索URL"]	= "https://m.ithome.com/search/%s.htm" ;
+      ["输入栏模式"]	= true ;
+      ["icon_btns"]	= {
+          [2]	= {
+              ["icon"]	= "nav_quan" ;
+              ["onClick"]	= "进入子页面(\"圈子\")" ;
+              } ;
+          [1]	= {
+              ["icon"]	= "nav_ithome" ;
+              ["onClick"]	= "刷新网页()" ;
+              } ;
+          } ;
+      ["menus"]	= {
+          [2]	= {
+              ["onClick"]	= "加载网页(\"https://m.ithome.com/html/user/userfeedback.htm\")" ;
+              ["name"]	= "反馈" ;
+              } ;
+          [1]	= {
+              ["onClick"]	= "加载网页(\"https://dyn.ithome.com/tougao/\")" ;
+              ["name"]	= "投稿" ;
+              } ;
+          } ;
+      ["搜索框提示"]	= "" ;
+      ["启用搜索功能"]	= true ;
+      } ;
+  ["colors"]	= {
+      ["悬浮按钮"]	= "#ffffffff" ;
+      ["顶栏部件触摸"]	= "#22ffffff" ;
+      ["侧滑栏背景"]	= "#ffffffff" ;
+      ["侧滑栏列表图标"]	= "#ff757575" ;
+      ["搜索栏部件"]	= "#ff888888" ;
+      ["搜索栏提示文字"]	= "#80000000" ;
+      ["顶栏"]	= "#ffffffff" ;
+      ["搜索栏部件触摸"]	= "#44000000" ;
+      ["搜索栏背景"]	= "#ffffffff" ;
+      ["悬浮按钮图标"]	= "#ff000000" ;
+      ["进度条"]	= "#00000000" ;
+      ["侧滑栏列表文字"]	= "#ff333333" ;
+      ["导航栏"]	= "#ff2c2e43" ;
+      ["顶栏部件"]	= "#ffffffff" ;
+      } ;
+  ["switch"]	= {
+      ["显示状态栏"]	= true ;
+      ["启用启动图"]	= true ;
+      ["横屏"]	= false ;
+      ["支持滑动页面"]	= false ;
+      } ;
+  ["events"]	= {
+      ["网页即将加载"]	= "--浏览器即将加载新的网页时执行的事件\
+\
+--接收参数\
+浏览器对象,网页链接=..." ;
+      ["收到新标题"]	= "--浏览器加载新页面并获得新标题时执行的事件\
+\
+--接收参数\
+浏览器对象，新标题=..." ;
+      ["网页加载完毕"]	= "--网页加载完毕后执行的事件\
+\
+--接收参数\
+浏览器对象,网页链接=..." ;
+      ["程序启动"]	= "--程序启动时会执行的事件" ;
+      } ;
+  } ;
