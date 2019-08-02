@@ -1,0 +1,96 @@
+{
+  ["colors"]	= {
+      ["导航栏"]	= "#ff990099" ;
+      ["进度条"]	= "#00000000" ;
+      ["状态栏"]	= "#ffffffff" ;
+      } ;
+  ["events"]	= {
+      ["网页加载完毕"]	= "--网页加载完毕后执行的事件\
+\
+--接收参数\
+浏览器对象,网页链接=..." ;
+      ["程序启动"]	= "import 'android.webkit.WebView'\
+webView.addJavascriptInterface({},'JsInterface')\
+\
+import\"android.content.pm.ActivityInfo\"activity.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_SENSOR);\
+\
+url2=\"www.windows93.net\"\
+--自定义一个叫url2的函数\
+\
+\
+function saveCookie(url2)--保存cookie\
+perf=this.getSharedPreferences(\"Cookie\",0)\
+perf.edit().putString(url2,CookieManager.getInstance().getCookie(url2)).apply()\
+end\
+--定义保存\
+\
+\
+function readCookie(url2)--读取cookie\
+pref=this.getSharedPreferences(\"Cookie\",0)\
+CookieManager.getInstance().setCookie(url2,pref.getString(url2,\"\"))\
+end\
+--定义读取\
+\
+\
+function removeCookie(url2)--删除cookie\
+this.getSharedPreferences(\"Cookie\",0).edit().remove(url2).apply()\
+CookieManager.getInstance().setCookie(url2,\"\")\
+CookieManager.getInstance().removeAllCookie()\
+end\
+--定义注销\
+\
+readCookie(url2)\
+\
+function onPause()\
+saveCookie(url2)\
+end\
+\
+function onKeyDown(key,event)\
+  if(key==4)then\
+    if(webView.canGoBack())then\
+      webView.goBack()\
+    else\
+      saveCookie(url2)\
+      appinfo=this.getPackageManager().getApplicationInfo(this.getPackageName(),0)\
+      applabel=this.getPackageManager().getApplicationLabel(appinfo)\
+      退出确认=对话框()\
+      .设置标题(\"退出 \"..applabel..\" ？\")\
+      .设置消息(\"您正在退出 \"..applabel..\" ，请确认\")\
+      .设置积极按钮(\"退出\",function()退出程序()end)\
+      .设置消极按钮(\"取消\")\
+      .show()\
+    end\
+    return true\
+  end\
+end\
+--程序启动时执行" ;
+      ["收到新标题"]	= "--浏览器加载新页面并获得新标题时执行的事件\
+\
+--接收参数\
+新标题=..." ;
+      ["网页即将加载"]	= "--浏览器即将加载新的网页时执行的事件\
+\
+--接收参数\
+浏览器对象,网页链接=..." ;
+      } ;
+  ["web"]	= {
+      ["启用长按菜单"]	= false ;
+      ["启用进度条"]	= false ;
+      ["浏览器用户标识"]	= "默认" ;
+      ["启动网页"]	= "http://www.windows93.net" ;
+      ["网页沉浸"]	= true ;
+      ["支持打开外部应用"]	= true ;
+      } ;
+  ["web_control"]	= {
+      [1]	= {
+          ["url"]	= "www.coolapk.com" ;
+          ["js"]	= "document.body.style.paddingTop=0" ;
+          ["remove_element"]	= "footer-links,ID(nav-outer),under,navbar-header,footer-record,footer-copyright,navbar navbar-fixed-top header" ;
+          } ;
+      } ;
+  ["switch"]	= {
+      ["显示状态栏"]	= false ;
+      ["启用启动图"]	= true ;
+      ["横屏"]	= false ;
+      } ;
+  } ;
