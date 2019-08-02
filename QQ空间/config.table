@@ -1,0 +1,200 @@
+{
+  ["fltBtn"]	= {
+      ["点击事件"]	= "加载Js(\"location.reload( );\" )\
+--悬浮按钮点击时执行的事件" ;
+      ["图标"]	= "" ;
+      ["显示"]	= true ;
+      } ;
+  ["colors"]	= {
+      ["悬浮按钮图标"]	= "#ffffffff" ;
+      ["进度条"]	= "#00000000" ;
+      ["搜索栏提示文字"]	= "#80000000" ;
+      ["搜索栏背景"]	= "#ffffffff" ;
+      ["顶栏部件触摸"]	= "#22000000" ;
+      ["侧滑栏背景"]	= "#ffffffff" ;
+      ["导航栏"]	= "#ff919396" ;
+      ["悬浮按钮"]	= "#ffffce00" ;
+      ["顶栏部件"]	= "#ff555555" ;
+      ["顶栏"]	= "#ffffce00" ;
+      ["搜索栏部件"]	= "#ff888888" ;
+      ["侧滑栏列表图标"]	= "#ff757575" ;
+      ["侧滑栏列表文字"]	= "#ff333333" ;
+      ["搜索栏部件触摸"]	= "#44000000" ;
+      } ;
+  ["view_attribute"]	= {
+      ["搜索栏阴影强度"]	= "2dp" ;
+      ["顶栏标题"]	= "" ;
+      ["侧滑栏宽度"]	= "240dp" ;
+      ["搜索栏圆角弧度"]	= "2dp" ;
+      ["顶栏高度"]	= "56dp" ;
+      ["顶栏阴影强度"]	= "2dp" ;
+      } ;
+  ["sidebar"]	= {
+      ["启用"]	= true ;
+      ["items"]	= {
+          [4]	= {
+              ["icon"]	= "drawable/information.png" ;
+              ["onClick"]	= "对话框()\
+.设置标题(\"关于\")\
+.设置消息(\"使用Fusion App制作。\")\
+.设置积极按钮(\"查看更多\",function()加载网页(\"https://www.coolapk.com/apk/com.android.QQzone \")\
+  显示消息(\"点击了确定\")\
+end)\
+.设置消极按钮(\"知道了\")\
+.显示()" ;
+              ["name"]	= "关于" ;
+              } ;
+          [1]	= {
+              ["icon"]	= "drawable/pencil.png" ;
+              ["onClick"]	= "加载网页(\"https://h5.qzone.qq.com/checkin/index?_wv=2098179&from=mqzone\")" ;
+              ["name"]	= "签到" ;
+              } ;
+          [2]	= {
+              ["icon"]	= "drawable/comment_multipe_outline.png" ;
+              ["onClick"]	= "加载网页(\"https://h5.qzone.qq.com/topicGroup/home\")" ;
+              ["name"]	= "话题圈" ;
+              } ;
+          [3]	= {
+              ["icon"]	= "drawable/account_switch.png" ;
+              ["onClick"]	= "加载网页(\"https://ui.ptlogin2.qq.com/cgi-bin/login?pt_hide_ad=1&style=9&pt_ttype=1&appid=549000929&pt_no_auth=1&pt_wxtest=1&daid=5&s_url=https%3A%2F%2Fh5.qzone.qq.com%2Fmqzone%2Findex\")" ;
+              ["name"]	= "切换账号" ;
+              } ;
+          } ;
+      ["启用顶部图片"]	= true ;
+      } ;
+  ["switch"]	= {
+      ["启用启动图"]	= true ;
+      ["支持滑动页面"]	= true ;
+      ["显示状态栏"]	= true ;
+      ["横屏"]	= false ;
+      } ;
+  ["web"]	= {
+      ["支持打开外部应用"]	= false ;
+      ["浏览器用户标识"]	= "默认" ;
+      ["网页沉浸"]	= true ;
+      ["启用进度条"]	= true ;
+      ["启用长按菜单"]	= true ;
+      ["启动网页"]	= "https://h5.qzone.qq.com/mqzone/index" ;
+      } ;
+  ["global_js"]	= "" ;
+  ["toolbar"]	= {
+      ["搜索框提示"]	= "" ;
+      ["启用搜索功能"]	= false ;
+      ["输入栏模式"]	= true ;
+      ["搜索URL"]	= "" ;
+      ["menus"]	= {
+          [1]	= {
+              ["onClick"]	= "appinfo=this.getPackageManager().getApplicationInfo(this.getPackageName(),0)\
+applabel=this.getPackageManager().getApplicationLabel(appinfo)\
+对话框()\
+.设置标题(\"退出 \"..applabel..\" ？\")\
+.设置消息(\"您正在退出 \"..applabel..\" ，请确认\")\
+.设置积极按钮(\"退出\",function()退出程序()\
+  显示消息(\"点击了确定\")\
+end)\
+.设置消极按钮(\"取消\")\
+.显示()" ;
+              ["name"]	= "退出" ;
+              } ;
+          } ;
+      ["icon_btns"]	= {
+          [4]	= {
+              ["onClick"]	= "加载网页(\"https://h5.qzone.qq.com/vipinfo/index?source=xinxi\")" ;
+              ["icon"]	= "jewelry" ;
+              } ;
+          [1]	= {
+              ["onClick"]	= "加载网页(\"https://h5.qzone.qq.com/mqzone/index\")" ;
+              ["icon"]	= "star" ;
+              } ;
+          [2]	= {
+              ["onClick"]	= "加载网页(\"https://h5.qzone.qq.com/mqzone/profile\")" ;
+              ["icon"]	= "home" ;
+              } ;
+          [3]	= {
+              ["onClick"]	= "加载网页(\"https://h5.qzone.qq.com/mqzone/jsp#playbar\")" ;
+              ["icon"]	= "play_circle" ;
+              } ;
+          } ;
+      } ;
+  ["events"]	= {
+      ["网页加载完毕"]	= "--网页加载完毕后执行的事件\
+加载Js(\"QZTouch.Widget.clinic.close();\")\
+--接收参数\
+浏览器对象,网页链接=..." ;
+      ["网页即将加载"]	= "--浏览器即将加载新的网页时执行的事件\
+\
+--接收参数\
+浏览器对象,网页链接=..." ;
+      ["程序启动"]	= "url2=\"h5.qzone.qq.com\"\
+--自定义一个叫url2的函数\
+\
+\
+function saveCookie(url2)--保存cookie\
+perf=this.getSharedPreferences(\"Cookie\",0)\
+perf.edit().putString(url2,CookieManager.getInstance().getCookie(url2)).apply()\
+end\
+--定义保存\
+\
+\
+function readCookie(url2)--读取cookie\
+pref=this.getSharedPreferences(\"Cookie\",0)\
+CookieManager.getInstance().setCookie(url2,pref.getString(url2,\"\"))\
+end\
+--定义读取\
+\
+\
+function removeCookie(url2)--删除cookie\
+this.getSharedPreferences(\"Cookie\",0).edit().remove(url2).apply()\
+CookieManager.getInstance().setCookie(url2,\"\")\
+CookieManager.getInstance().removeAllCookie()\
+end\
+--定义注销\
+\
+readCookie(url2)\
+\
+function onPause()\
+saveCookie(url2)\
+end\
+\
+function onKeyDown(key,event)\
+  if(key==4)then\
+    if(webView.canGoBack())then\
+      webView.goBack()\
+    else\
+      saveCookie(url2)\
+      appinfo=this.getPackageManager().getApplicationInfo(this.getPackageName(),0)\
+      applabel=this.getPackageManager().getApplicationLabel(appinfo)\
+      退出确认=对话框()\
+      .设置标题(\"退出 \"..applabel..\" ？\")\
+      .设置消息(\"您正在退出 \"..applabel..\" ，请确认\")\
+      .设置积极按钮(\"退出\",function()退出程序()end)\
+      .设置消极按钮(\"取消\")\
+      .show()\
+    end\
+    return true\
+  end\
+end\
+--程序启动时会执行的事件" ;
+      ["收到新标题"]	= "--浏览器加载新页面并获得新标题时执行的事件\
+\
+--接收参数\
+新标题=..." ;
+      } ;
+  ["web_control"]	= {
+      [1]	= {
+          ["js"]	= "" ;
+          ["remove_element"]	= "copyright J_copyright,footer J_footer,btn btn-open,mod-native-tips-wrap js-the-bottom,@ID(nav_bar_playbar),@ID(top_header),icon-back,@ID(j-return),@ID(j-nav),@ID(_clinic_hd)" ;
+          ["url"]	= "h5.qzone.qq.com" ;
+          } ;
+      [2]	= {
+          ["js"]	= "document.body.style.paddingTop=0" ;
+          ["remove_element"]	= "footer-links,ID(nav-outer),under,navbar-header,footer-record,footer-copyright,navbar navbar-fixed-top header" ;
+          ["url"]	= "www.coolapk.com" ;
+          } ;
+      [3]	= {
+          ["js"]	= "" ;
+          ["remove_element"]	= "banner" ;
+          ["url"]	= "ui.ptlogin2.qq.com" ;
+          } ;
+      } ;
+  } ;
