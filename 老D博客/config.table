@@ -1,0 +1,200 @@
+{
+  ["switch"]	= {
+      ["启用启动图"]	= true ;
+      ["显示状态栏"]	= true ;
+      ["横屏"]	= false ;
+      ["支持滑动页面"]	= false ;
+      } ;
+  ["fltBtn"]	= {
+      ["图标"]	= "" ;
+      ["点击事件"]	= "加载Js(\"location.reload( );\" )\
+--悬浮按钮点击时执行的事件" ;
+      ["显示"]	= false ;
+      } ;
+  ["events"]	= {
+      ["网页加载完毕"]	= "--网页加载完毕后执行的事件\
+\
+--接收参数\
+浏览器对象,网页链接=..." ;
+      ["网页即将加载"]	= "--浏览器即将加载新的网页时执行的事件\
+\
+--接收参数\
+浏览器对象,网页链接=..." ;
+      ["程序启动"]	= "url2=\"laod.cn\"\
+--自定义一个叫url2的函数\
+\
+\
+function saveCookie(url2)--保存cookie\
+perf=this.getSharedPreferences(\"Cookie\",0)\
+perf.edit().putString(url2,CookieManager.getInstance().getCookie(url2)).apply()\
+end\
+--定义保存\
+\
+\
+function readCookie(url2)--读取cookie\
+pref=this.getSharedPreferences(\"Cookie\",0)\
+CookieManager.getInstance().setCookie(url2,pref.getString(url2,\"\"))\
+end\
+--定义读取\
+\
+\
+function removeCookie(url2)--删除cookie\
+this.getSharedPreferences(\"Cookie\",0).edit().remove(url2).apply()\
+CookieManager.getInstance().setCookie(url2,\"\")\
+CookieManager.getInstance().removeAllCookie()\
+end\
+--定义注销\
+\
+readCookie(url2)\
+\
+function onPause()\
+saveCookie(url2)\
+end\
+\
+function onKeyDown(key,event)\
+  if(key==4)then\
+    if(webView.canGoBack())then\
+      webView.goBack()\
+    else\
+      saveCookie(url2)\
+      appinfo=this.getPackageManager().getApplicationInfo(this.getPackageName(),0)\
+      applabel=this.getPackageManager().getApplicationLabel(appinfo)\
+      退出确认=对话框()\
+      .设置标题(\"退出 \"..applabel..\" ？\")\
+      .设置消息(\"您正在退出 \"..applabel..\" ，请确认\")\
+      .设置积极按钮(\"退出\",function()退出程序()end)\
+      .设置消极按钮(\"取消\")\
+      .show()\
+    end\
+    return true\
+  end\
+end\
+--程序启动时会执行的事件" ;
+      ["收到新标题"]	= "--浏览器加载新页面并获得新标题时执行的事件\
+\
+--接收参数\
+新标题=..." ;
+      } ;
+  ["toolbar"]	= {
+      ["menus"]	= {
+          [2]	= {
+              ["name"]	= "退出" ;
+              ["onClick"]	= "对话框()\
+.设置标题(\"确定退出？\")\
+.设置积极按钮(\"确定\",function()退出程序()\
+  显示消息(\"点击了确定\")\
+end)\
+.设置消极按钮(\"取消\")\
+.显示()" ;
+              } ;
+          [1]	= {
+              ["name"]	= "刷新" ;
+              ["onClick"]	= "刷新网页()" ;
+              } ;
+          } ;
+      ["icon_btns"]	= {
+          [2]	= {
+              ["icon"]	= "share_variant" ;
+              ["onClick"]	= "分享文本(\"文本内容\")" ;
+              } ;
+          [1]	= {
+              ["icon"]	= "account" ;
+              ["onClick"]	= "加载网页(\"https://laod.cn/wp-admin/profile.php\")" ;
+              } ;
+          } ;
+      ["搜索框提示"]	= "" ;
+      ["搜索URL"]	= "https://laod.cn/?s=%s" ;
+      ["输入栏模式"]	= true ;
+      ["启用搜索功能"]	= true ;
+      } ;
+  ["sidebar"]	= {
+      ["启用顶部图片"]	= true ;
+      ["启用"]	= true ;
+      ["items"]	= {
+          [1]	= {
+              ["onClick"]	= "加载网页(\"https://laod.cn/\")" ;
+              ["name"]	= "首页" ;
+              ["icon"]	= "drawable/home.png" ;
+              } ;
+          [2]	= {
+              ["onClick"]	= "加载网页(\"https://laod.cn/hosts/\")" ;
+              ["name"]	= "hosts" ;
+              ["icon"]	= "drawable/file_document.png" ;
+              } ;
+          [3]	= {
+              ["onClick"]	= "加载网页(\"https://laod.cn/tools/\")" ;
+              ["name"]	= "工具软件" ;
+              ["icon"]	= "drawable/apps.png" ;
+              } ;
+          [4]	= {
+              ["onClick"]	= "加载网页(\"https://laod.cn/code-audit/\")" ;
+              ["name"]	= "代码审计" ;
+              ["icon"]	= "drawable/checkbox_marked_circle_outline.png" ;
+              } ;
+          [5]	= {
+              ["onClick"]	= "加载网页(\"https://laod.cn/movie/\")" ;
+              ["name"]	= "电影 美剧" ;
+              ["icon"]	= "drawable/filmstrip.png" ;
+              } ;
+          [6]	= {
+              ["onClick"]	= "加载网页(\"https://laod.cn/guestbook\")" ;
+              ["name"]	= "留言板" ;
+              ["icon"]	= "drawable/bulletin_board.png" ;
+              } ;
+          [7]	= {
+              ["onClick"]	= "加载网页(\"https://laod.cn/user-center\")" ;
+              ["name"]	= "用户中心" ;
+              ["icon"]	= "drawable/account.png" ;
+              } ;
+          [8]	= {
+              ["onClick"]	= "加载网页(\"https://laod.cn/code-audit/#\")" ;
+              ["name"]	= "查看更多" ;
+              ["icon"]	= "drawable/more.png" ;
+              } ;
+          [9]	= {
+              ["onClick"]	= "加载网页(\"https://laod.cn/about\")" ;
+              ["name"]	= "关于" ;
+              ["icon"]	= "drawable/information.png" ;
+              } ;
+          } ;
+      } ;
+  ["view_attribute"]	= {
+      ["顶栏阴影强度"]	= "2dp" ;
+      ["顶栏标题"]	= "老D博客" ;
+      ["搜索栏圆角弧度"]	= "2dp" ;
+      ["侧滑栏宽度"]	= "240dp" ;
+      ["顶栏高度"]	= "56dp" ;
+      ["搜索栏阴影强度"]	= "2dp" ;
+      } ;
+  ["web_control"]	= {
+      [1]	= {
+          ["js"]	= "" ;
+          ["remove_element"]	= "textwidget widget-text,@ID(navigation-toggle),widget-title,nav-search,@ID(menu-item-3353),site-info,@ID(menu-box),@ID(top-menu),@ID(masthead),ab-submenu,ab-icon" ;
+          ["url"]	= "laod.cn" ;
+          } ;
+      } ;
+  ["web"]	= {
+      ["网页沉浸"]	= false ;
+      ["启用长按菜单"]	= true ;
+      ["浏览器用户标识"]	= "默认" ;
+      ["启用进度条"]	= true ;
+      ["启动网页"]	= "https://laod.cn" ;
+      ["支持打开外部应用"]	= true ;
+      } ;
+  ["colors"]	= {
+      ["搜索栏部件"]	= "#ff888888" ;
+      ["搜索栏背景"]	= "#ffffffff" ;
+      ["悬浮按钮"]	= "#ff555555" ;
+      ["搜索栏部件触摸"]	= "#44000000" ;
+      ["进度条"]	= "#ff3288d3" ;
+      ["搜索栏提示文字"]	= "#80000000" ;
+      ["导航栏"]	= "#ff8c8c8c" ;
+      ["顶栏部件"]	= "#ff555555" ;
+      ["侧滑栏背景"]	= "#ffffffff" ;
+      ["悬浮按钮图标"]	= "#ffffffff" ;
+      ["顶栏"]	= "#ffe9e9e9" ;
+      ["侧滑栏列表图标"]	= "#ff757575" ;
+      ["顶栏部件触摸"]	= "#22000000" ;
+      ["侧滑栏列表文字"]	= "#ff333333" ;
+      } ;
+  } ;
