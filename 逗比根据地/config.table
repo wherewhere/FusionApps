@@ -1,0 +1,226 @@
+{
+  ["toolbar"]	= {
+      ["搜索框提示"]	= "" ;
+      ["输入栏模式"]	= true ;
+      ["启用搜索功能"]	= true ;
+      ["搜索URL"]	= "https://doub.ws/search/%s" ;
+      ["icon_btns"]	= {
+          [2]	= {
+              ["icon"]	= "refresh" ;
+              ["onClick"]	= "刷新网页()" ;
+              } ;
+          [1]	= {
+              ["icon"]	= "share_variant" ;
+              ["onClick"]	= "分享文本(\"文本内容\")" ;
+              } ;
+          } ;
+      ["menus"]	= {
+          [1]	= {
+              ["name"]	= "退出" ;
+              ["onClick"]	= "saveCookie(url2)\
+appinfo=this.getPackageManager().getApplicationInfo(this.getPackageName(),0)\
+applabel=this.getPackageManager().getApplicationLabel(appinfo)\
+退出确认=对话框()\
+.设置标题(\"退出 \"..applabel..\" ？\")\
+.设置消息(\"您正在退出 \"..applabel..\" ，请确认\")\
+.设置积极按钮(\"退出\",function()退出程序()end)\
+.设置消极按钮(\"取消\")\
+.show()" ;
+              } ;
+          } ;
+      } ;
+  ["colors"]	= {
+      ["顶栏部件"]	= "#ff555555" ;
+      ["搜索栏部件触摸"]	= "#44000000" ;
+      ["顶栏部件触摸"]	= "#22000000" ;
+      ["搜索栏背景"]	= "#ffffffff" ;
+      ["导航栏"]	= "#ff0e725e" ;
+      ["搜索栏部件"]	= "#ff888888" ;
+      ["搜索栏提示文字"]	= "#80000000" ;
+      ["侧滑栏列表文字"]	= "#ff333333" ;
+      ["悬浮按钮"]	= "#ff616161" ;
+      ["顶栏"]	= "#ff1abc9c" ;
+      ["进度条"]	= "#00000000" ;
+      ["悬浮按钮图标"]	= "#ffffffff" ;
+      ["侧滑栏列表图标"]	= "#ff757575" ;
+      ["侧滑栏背景"]	= "#ffffffff" ;
+      } ;
+  ["view_attribute"]	= {
+      ["搜索栏圆角弧度"]	= "2dp" ;
+      ["侧滑栏宽度"]	= "240dp" ;
+      ["顶栏阴影强度"]	= "2dp" ;
+      ["顶栏高度"]	= "56dp" ;
+      ["顶栏标题"]	= "逗比根据地" ;
+      ["搜索栏阴影强度"]	= "2dp" ;
+      } ;
+  ["switch"]	= {
+      ["显示状态栏"]	= true ;
+      ["横屏"]	= false ;
+      ["支持滑动页面"]	= false ;
+      ["启用启动图"]	= true ;
+      } ;
+  ["web"]	= {
+      ["浏览器用户标识"]	= "默认" ;
+      ["启用长按菜单"]	= true ;
+      ["网页沉浸"]	= false ;
+      ["启动网页"]	= "https://doub.io" ;
+      ["启用进度条"]	= true ;
+      ["支持打开外部应用"]	= true ;
+      } ;
+  ["web_control"]	= {
+      [4]	= {
+          ["remove_element"]	= "navbar,footer,widget widget_links,@ID(flashID),textwidget custom-html-widget" ;
+          ["url"]	= "doub.loan" ;
+          ["js"]	= "" ;
+          } ;
+      [1]	= {
+          ["remove_element"]	= "navbar,footer,widget widget_links,@ID(flashID),textwidget custom-html-widget" ;
+          ["url"]	= "doub.ws" ;
+          ["js"]	= "" ;
+          } ;
+      [2]	= {
+          ["remove_element"]	= "navbar navbar-default navbar-fixed-top" ;
+          ["url"]	= "softs.fun" ;
+          ["js"]	= "" ;
+          } ;
+      [3]	= {
+          ["remove_element"]	= "navbar,footer,widget widget_links,@ID(flashID),textwidget custom-html-widget" ;
+          ["url"]	= "doub.io" ;
+          ["js"]	= "" ;
+          } ;
+      } ;
+  ["fltBtn"]	= {
+      ["显示"]	= false ;
+      ["图标"]	= "" ;
+      ["点击事件"]	= "--悬浮按钮点击时执行的事件" ;
+      } ;
+  ["sidebar"]	= {
+      ["items"]	= {
+          [1]	= {
+              ["name"]	= "首页" ;
+              ["icon"]	= "drawable/home.png" ;
+              ["onClick"]	= "加载网页(\"https://doub.loan/\")" ;
+              } ;
+          [2]	= {
+              ["name"]	= "逗比推荐" ;
+              ["icon"]	= "drawable/thumb_up.png" ;
+              ["onClick"]	= "加载网页(\"https://doub.loan/dbtj/\")" ;
+              } ;
+          [3]	= {
+              ["name"]	= "科学上网" ;
+              ["icon"]	= "drawable/earth.png" ;
+              ["onClick"]	= "加载网页(\"https://doub.loan/kxsw/\")" ;
+              } ;
+          [4]	= {
+              ["name"]	= "Shadowsocks" ;
+              ["icon"]	= "drawable/plane.png" ;
+              ["onClick"]	= "加载网页(\"https://doub.loan/ss-jc26/\")" ;
+              } ;
+          [5]	= {
+              ["name"]	= "免费帐号分享" ;
+              ["icon"]	= "drawable/share_variant.png" ;
+              ["onClick"]	= "加载网页(\"https://doub.loan/sszhfx/\")" ;
+              } ;
+          [6]	= {
+              ["name"]	= "便宜VPS推荐" ;
+              ["icon"]	= "drawable/server.png" ;
+              ["onClick"]	= "加载网页(\"https://doub.loan/vps-tj/\")" ;
+              } ;
+          [7]	= {
+              ["name"]	= "逗比云" ;
+              ["icon"]	= "drawable/cloud.png" ;
+              ["onClick"]	= "加载网页(\"https://softs.fun/\")" ;
+              } ;
+          [8]	= {
+              ["name"]	= "捐赠打赏" ;
+              ["icon"]	= "drawable/heart.png" ;
+              ["onClick"]	= "加载网页(\"https://doub.loan/dashang/\")" ;
+              } ;
+          [9]	= {
+              ["name"]	= "留言" ;
+              ["icon"]	= "drawable/comment_text_outline.png" ;
+              ["onClick"]	= "加载网页(\"https://doub.loan/guestbook/\")" ;
+              } ;
+          [10]	= {
+              ["name"]	= "关于" ;
+              ["icon"]	= "drawable/information.png" ;
+              ["onClick"]	= "对话框()\
+.设置标题(\"关于\")\
+.设置消息(\"逗比根据地 版权所有，保留一切权利 · 欲思主题 © 2015-2018\")\
+.设置积极按钮(\"确定\",function()\
+  显示消息(\"点击了确定\")\
+end)\
+.显示()" ;
+              } ;
+          } ;
+      ["启用顶部图片"]	= true ;
+      ["启用"]	= true ;
+      } ;
+  ["events"]	= {
+      ["网页加载完毕"]	= "--网页加载完毕后执行的事件\
+\
+--接收参数\
+浏览器对象,网页链接=..." ;
+      ["网页即将加载"]	= "--浏览器即将加载新的网页时执行的事件\
+\
+--接收参数\
+浏览器对象,网页链接=..." ;
+      ["程序启动"]	= "import 'android.webkit.WebView'\
+webView.addJavascriptInterface({},'JsInterface')\
+\
+url2=\"doub.ws\"\
+--自定义一个叫url2的函数\
+\
+\
+function saveCookie(url2)--保存cookie\
+perf=this.getSharedPreferences(\"Cookie\",0)\
+perf.edit().putString(url2,CookieManager.getInstance().getCookie(url2)).apply()\
+end\
+--定义保存\
+\
+\
+function readCookie(url2)--读取cookie\
+pref=this.getSharedPreferences(\"Cookie\",0)\
+CookieManager.getInstance().setCookie(url2,pref.getString(url2,\"\"))\
+end\
+--定义读取\
+\
+\
+function removeCookie(url2)--删除cookie\
+this.getSharedPreferences(\"Cookie\",0).edit().remove(url2).apply()\
+CookieManager.getInstance().setCookie(url2,\"\")\
+CookieManager.getInstance().removeAllCookie()\
+end\
+--定义注销\
+\
+readCookie(url2)\
+\
+function onPause()\
+saveCookie(url2)\
+end\
+\
+function onKeyDown(key,event)\
+  if(key==4)then\
+    if(webView.canGoBack())then\
+      webView.goBack()\
+    else\
+      saveCookie(url2)\
+      appinfo=this.getPackageManager().getApplicationInfo(this.getPackageName(),0)\
+      applabel=this.getPackageManager().getApplicationLabel(appinfo)\
+      退出确认=对话框()\
+      .设置标题(\"退出 \"..applabel..\" ？\")\
+      .设置消息(\"您正在退出 \"..applabel..\" ，请确认\")\
+      .设置积极按钮(\"退出\",function()退出程序()end)\
+      .设置消极按钮(\"取消\")\
+      .show()\
+    end\
+    return true\
+  end\
+end\
+--程序启动时会执行的事件" ;
+      ["收到新标题"]	= "--浏览器加载新页面并获得新标题时执行的事件\
+\
+--接收参数\
+新标题=..." ;
+      } ;
+  } ;
