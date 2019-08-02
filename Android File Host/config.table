@@ -1,0 +1,206 @@
+{
+  ["events"]	= {
+      ["程序启动"]	= "webView.settings.setUserAgentString(\"Mozilla/5.0 Dalvik/2 ( Linux; U; NEM-AL10 Build/HONORNEM-AL10;Youku;7.1.4;) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Safari/537.36 (Baidu; P1 6.0) iPhone/7.1 Android/8.0 baiduboxapp/2.7.0.10 \")\
+\
+import 'android.webkit.WebView'\
+webView.addJavascriptInterface({},'JsInterface')\
+\
+url2=\"doub.ws\"\
+--自定义一个叫url2的函数\
+\
+\
+function saveCookie(url2)--保存cookie\
+perf=this.getSharedPreferences(\"Cookie\",0)\
+perf.edit().putString(url2,CookieManager.getInstance().getCookie(url2)).apply()\
+end\
+--定义保存\
+\
+\
+function readCookie(url2)--读取cookie\
+pref=this.getSharedPreferences(\"Cookie\",0)\
+CookieManager.getInstance().setCookie(url2,pref.getString(url2,\"\"))\
+end\
+--定义读取\
+\
+\
+function removeCookie(url2)--删除cookie\
+this.getSharedPreferences(\"Cookie\",0).edit().remove(url2).apply()\
+CookieManager.getInstance().setCookie(url2,\"\")\
+CookieManager.getInstance().removeAllCookie()\
+end\
+--定义注销\
+\
+readCookie(url2)\
+\
+function onPause()\
+saveCookie(url2)\
+end\
+\
+function onKeyDown(key,event)\
+  if(key==4)then\
+    if(webView.canGoBack())then\
+      webView.goBack()\
+    else\
+      saveCookie(url2)\
+      appinfo=this.getPackageManager().getApplicationInfo(this.getPackageName(),0)\
+      applabel=this.getPackageManager().getApplicationLabel(appinfo)\
+      退出确认=对话框()\
+      .设置标题(\"退出 \"..applabel..\" ？\")\
+      .设置消息(\"您正在退出 \"..applabel..\" ，请确认\")\
+      .设置积极按钮(\"退出\",function()退出程序()end)\
+      .设置消极按钮(\"取消\")\
+      .show()\
+    end\
+    return true\
+  end\
+end\
+--程序启动" ;
+      ["网页加载完毕"]	= "--网页加载完毕后执行的事件\
+\
+--接收参数\
+浏览器对象,网页链接=..." ;
+      ["收到新标题"]	= "--浏览器加载新页面并获得新标题时执行的事件\
+\
+--接收参数\
+浏览器对象，新标题=..." ;
+      ["网页即将加载"]	= "--浏览器即将加载新的网页时执行的事件\
+\
+--接收参数\
+浏览器对象,网页链接=..." ;
+      } ;
+  ["fltBtn"]	= {
+      ["图标"]	= "" ;
+      ["显示"]	= true ;
+      ["点击事件"]	= "刷新网页()--悬浮按钮点击时执行的事件" ;
+      } ;
+  ["sidebar"]	= {
+      ["items"]	= {
+          [1]	= {
+              ["onClick"]	= "加载网页(\"https://androidfilehost.com/\")" ;
+              ["name"]	= "主页" ;
+              ["icon"]	= "drawable/home.png" ;
+              } ;
+          [2]	= {
+              ["onClick"]	= "加载网页(\"https://androidfilehost.com/?w=gapps\")" ;
+              ["name"]	= "Gapps" ;
+              ["icon"]	= "drawable/google_glass.png" ;
+              } ;
+          [3]	= {
+              ["onClick"]	= "加载网页(\"https://androidfilehost.com/?w=about\")" ;
+              ["name"]	= "关于" ;
+              ["icon"]	= "drawable/information.png" ;
+              } ;
+          [4]	= {
+              ["onClick"]	= "对话框()\
+.设置标题(\"确定捐赠？\")\
+.设置消息(\"您将捐赠的是Android File Host开发商Spherely LLC\")\
+.设置积极按钮(\"确定\",function()加载网页(\"Spherely LLC\")\
+  显示消息(\"点击了确定\")\
+end)\
+.设置消极按钮(\"取消\")\
+.显示()" ;
+              ["name"]	= "捐赠" ;
+              ["icon"]	= "drawable/coin.png" ;
+              } ;
+          [5]	= {
+              ["onClick"]	= "" ;
+              ["name"]	= "联系官方" ;
+              ["icon"]	= "drawable/account_box.png" ;
+              } ;
+          } ;
+      ["启用顶部图片"]	= true ;
+      ["启用"]	= true ;
+      } ;
+  ["colors"]	= {
+      ["进度条"]	= "#ff429bc3" ;
+      ["侧滑栏列表图标"]	= "#ff757575" ;
+      ["顶栏"]	= "#00000000" ;
+      ["顶栏部件触摸"]	= "#22ffffff" ;
+      ["侧滑栏列表文字"]	= "#ff333333" ;
+      ["顶栏部件"]	= "#ffffffff" ;
+      ["悬浮按钮图标"]	= "#ffffffff" ;
+      ["搜索栏部件触摸"]	= "#44000000" ;
+      ["搜索栏背景"]	= "#ffffffff" ;
+      ["搜索栏提示文字"]	= "#80000000" ;
+      ["悬浮按钮"]	= "#ff429bc3" ;
+      ["导航栏"]	= "#ff969696" ;
+      ["侧滑栏背景"]	= "#ffffffff" ;
+      ["搜索栏部件"]	= "#ff888888" ;
+      } ;
+  ["switch"]	= {
+      ["横屏"]	= false ;
+      ["显示状态栏"]	= true ;
+      ["启用启动图"]	= true ;
+      ["支持滑动页面"]	= true ;
+      } ;
+  ["web_control"]	= {
+      [1]	= {
+          ["js"]	= "" ;
+          ["url"]	= "androidfilehost.com" ;
+          ["remove_element"]	= "col-md-2 col-sm-3 footer-support-menu,social-icons list-inline,col-sm-2 col-sm-offset-1 footer-links-menu,navbar-header,footer-bottom,col-sm-3 footer-logo-menu,community-menu,pull-left,search pull-right,footer-top,dG1Ln-2i-1-" ;
+          } ;
+      } ;
+  ["web"]	= {
+      ["浏览器用户标识"]	= "默认" ;
+      ["启用进度条"]	= true ;
+      ["启动网页"]	= "https://androidfilehost.com" ;
+      ["启用长按菜单"]	= true ;
+      ["支持打开外部应用"]	= true ;
+      ["网页沉浸"]	= false ;
+      } ;
+  ["toolbar"]	= {
+      ["搜索框提示"]	= "" ;
+      ["menus"]	= {
+          [4]	= {
+              ["onClick"]	= "saveCookie(url2)\
+appinfo=this.getPackageManager().getApplicationInfo(this.getPackageName(),0)\
+applabel=this.getPackageManager().getApplicationLabel(appinfo)\
+退出确认=对话框()\
+.设置标题(\"退出 \"..applabel..\" ？\")\
+.设置消息(\"您正在退出 \"..applabel..\" ，请确认\")\
+.设置积极按钮(\"退出\",function()退出程序()end)\
+.设置消极按钮(\"取消\")\
+.show()" ;
+              ["name"]	= "退出" ;
+              } ;
+          [1]	= {
+              ["onClick"]	= "加载网页(\"https://androidfilehost.com/user/?w=login\")" ;
+              ["name"]	= "登录" ;
+              } ;
+          [2]	= {
+              ["onClick"]	= "加载网页(\"https://androidfilehost.com/user/?w=register\")" ;
+              ["name"]	= "注册" ;
+              } ;
+          [3]	= {
+              ["onClick"]	= "removeCookie(url2)\
+刷新网页()" ;
+              ["name"]	= "注销" ;
+              } ;
+          } ;
+      ["启用搜索功能"]	= true ;
+      ["输入栏模式"]	= true ;
+      ["icon_btns"]	= {
+          [1]	= {
+              ["onClick"]	= "加载网页(\"https://androidfilehost.com/user/?w=settings-dev-files\")" ;
+              ["icon"]	= "box_upload" ;
+              } ;
+          [2]	= {
+              ["onClick"]	= "加载网页(\"https://androidfilehost.com/user/?w=settings-home\")" ;
+              ["icon"]	= "cog" ;
+              } ;
+          [3]	= {
+              ["onClick"]	= "加载网页(\"https://androidfilehost.com/user/?w=logout\")" ;
+              ["icon"]	= "lock_unlocked" ;
+              } ;
+          } ;
+      ["搜索URL"]	= "https://androidfilehost.com/?w=search&s=%s" ;
+      } ;
+  ["view_attribute"]	= {
+      ["侧滑栏宽度"]	= "240dp" ;
+      ["顶栏高度"]	= "56dp" ;
+      ["搜索栏阴影强度"]	= "2dp" ;
+      ["搜索栏圆角弧度"]	= "2dp" ;
+      ["顶栏阴影强度"]	= "2dp" ;
+      ["顶栏标题"]	= "Android File Host" ;
+      } ;
+  } ;
