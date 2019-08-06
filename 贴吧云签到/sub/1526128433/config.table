@@ -1,0 +1,366 @@
+{
+  ["colors"]	= {
+      ["侧滑栏列表图标"]	= "#ff757575" ;
+      ["搜索栏提示文字"]	= "#80000000" ;
+      ["顶栏部件触摸"]	= "#22ffffff" ;
+      ["悬浮按钮图标"]	= "#ffffffff" ;
+      ["侧滑栏列表文字"]	= "#ff333333" ;
+      ["搜索栏背景"]	= "#ffffffff" ;
+      ["搜索栏部件触摸"]	= "#44000000" ;
+      ["悬浮按钮"]	= "#ff33a7aa" ;
+      ["搜索栏部件"]	= "#ff888888" ;
+      ["导航栏"]	= "#ff999999" ;
+      ["进度条"]	= "#00000000" ;
+      ["侧滑栏背景"]	= "#ffffffff" ;
+      ["顶栏部件"]	= "#ffffffff" ;
+      ["顶栏"]	= "#ff2c2e43" ;
+      } ;
+  ["web"]	= {
+      ["网页沉浸"]	= false ;
+      ["启用进度条"]	= true ;
+      ["启动网页"]	= "" ;
+      ["支持打开外部应用"]	= true ;
+      ["浏览器用户标识"]	= "默认" ;
+      ["启用长按菜单"]	= true ;
+      } ;
+  ["events"]	= {
+      ["程序启动"]	= "import 'android.webkit.WebView'\
+webView.addJavascriptInterface({},'JsInterface')\
+\
+require\"import\"\
+import \"android.app.*\"\
+import \"android.os.*\"\
+import \"android.widget.*\"\
+import \"android.view.*\"\
+import \"android.text.*\"\
+layout={\
+  LinearLayout,\
+  layout_width=\"fill\",\
+  layout_height=\"fill\",\
+  orientation=\"vertical\",\
+  backgroundColor=\"#FFFFFFFF\",\
+  {\
+    RelativeLayout,\
+    layout_width=\"fill\",\
+    layout_height=\"150dp\",\
+    layout_marginTop=\"35dp\",\
+    {\
+      ImageView,\
+      id=\"logo\",\
+      layout_width=\"130dp\",\
+      layout_height=\"130dp\",\
+      layout_marginLeft=\"140dp\",\
+      src=\"drawable/icon.png\",\
+    }\
+  },\
+  {\
+    RelativeLayout,\
+    layout_width=\"fill\",\
+    layout_height=\"36dp\",\
+    layout_marginTop=\"0dp\",\
+    {\
+      TextView,\
+      layout_marginLeft=\"130dp\",\
+      text=Html.fromHtml(\"更优雅的签到体验\"),\
+      textSize=\"20sp\",\
+      textColor=\"#009688\",\
+    }\
+  },\
+  {\
+    RelativeLayout,\
+    layout_width=\"fill\",\
+    layout_height=\"fill\",\
+    layout_marginTop=\"20dp\",\
+    {\
+      ListView,\
+      id=\"list\",\
+      layout_width=\"fill\",\
+      layout_marginTop=\"20dp\",\
+      layout_marginLeft=\"60dp\",\
+      layout_marginRight=\"60dp\",\
+      dividerHeight=\"0dp\",\
+    },\
+    {\
+      CardView,\
+      layout_width=\"200dp\",\
+      layout_height=\"200dp\",\
+      layout_alignParentRight=true,\
+      layout_alignParentBottom=true,\
+      layout_marginRight=\"-80dp\",\
+      layout_marginBottom=\"-80dp\",\
+      radius=\"100dp\",\
+      elevation=\"0dp\",\
+      CardBackgroundColor=\"#50009688\",\
+    },\
+    {\
+      CardView,\
+      layout_width=\"150dp\",\
+      layout_height=\"150dp\",\
+      layout_alignParentRight=true,\
+      layout_alignParentBottom=true,\
+      layout_marginRight=\"-60dp\",\
+      layout_marginBottom=\"-60dp\",\
+      radius=\"75dp\",\
+      elevation=\"0dp\",\
+      CardBackgroundColor=\"#80009688\",\
+    },\
+    {\
+      LinearLayout,\
+      layout_alignParentLeft=true,\
+      layout_alignParentBottom=true,\
+      layout_margin=\"20dp\",\
+      orientation=\"horizontal\",\
+      {\
+        TextView,\
+        text=\"隐藏功能\",\
+        textSize=\"15sp\",\
+        textColor=\"#009688\",\
+        onClick=function()\
+          进入子页面(\"贴吧Go\")\
+          end\
+      },\
+      {\
+        FrameLayout,\
+        layout_width=\"10dp\",\
+      },\
+      {\
+        TextView,\
+        text=\"设备信息\",\
+        textSize=\"15sp\",\
+        textColor=\"#009688\",\
+        onClick=function()\
+        device_model = Build.MODEL \
+\
+version_sdk = Build.VERSION.SDK \
+\
+version_release = Build.VERSION.RELEASE \
+import \"android.provider.Settings$Secure\"\
+android_id = Secure.getString(activity.getContentResolver(), Secure.ANDROID_ID)\
+\
+对话框()\
+.设置标题(\"设备信息\")\
+.设置消息(\"设备型号：\"..device_model..\"\\n设备SDK：\"..version_sdk..\"\\n设备系统版本：\"..version_release..\"\\n设备识别码：\"..android_id..\"\")\
+.设置积极按钮(\"复制识别码\",function()\
+  复制文本(android_id)\
+end)\
+.设置消极按钮(\"取消\")\
+.显示()\
+        end        \
+      },\
+    },\
+  },\
+}\
+\
+activity.setContentView(loadlayout(layout))\
+\
+adpd={\
+  {\
+    img={\
+      src=\"drawable/ic_poll_black_48dp.png\",\
+    },\
+    title={\
+      text=\"版本\",\
+    },\
+    content={\
+      text=\"0.2.x\",\
+    },\
+  },\
+    {\
+    img={\
+      src=\"drawable/ic_person_black_48dp.png\",\
+    },\
+    title={\
+      text=\"开发者\",\
+    },\
+    content={\
+      text=\"酷安 @where\",\
+    },\
+  },\
+  {\
+    img={\
+      src=\"drawable/ic_color_lens_black_48dp.png\",\
+    },\
+    title={\
+      text=\"应用介绍页面模板\",\
+    },\
+    content={\
+      text=\"酷安 @LuXts\",\
+    },\
+  },\
+  {\
+    img={\
+      src=\"drawable/ic_color_lens_black_48dp.png\",\
+    },\
+    title={\
+      text=\"关于页面模板\",\
+    },\
+    content={\
+      text=\"酷安 @丨丨丨丨丨\",\
+    },\
+  },\
+  {\
+    img={\
+      src=\"drawable/ic_person_add_black_48dp.png\",\
+    },\
+    title={\
+      text=\"加入官方群\",\
+    },\
+    content={\
+      text=\"讨论，交流，聊天。\",\
+    },\
+  },\
+  {\
+    img={\
+      src=\"drawable/ic_share_black_48dp.png\",\
+    },\
+    title={\
+      text=\"分享本应用\",\
+    },\
+    content={\
+      text=\"分享给朋友\",\
+    },\
+  },\
+}\
+\
+items={\
+  LinearLayout,\
+  layout_width=\"fill\",\
+  orientation=\"horizontal\",\
+  gravity=\"center|left\",\
+  {\
+    ImageView,\
+    id=\"img\",\
+    layout_margin=\"10dp\",\
+    layout_width=\"30dp\",\
+    layout_height=\"30dp\",\
+  },\
+  {\
+    LinearLayout,\
+    layout_width=\"fill\",\
+    layout_marginLeft=\"10dp\",\
+    layout_marginRight=\"10dp\",\
+    orientation=\"vertical\",\
+    {\
+      TextView,\
+      id=\"title\",\
+      textColor=\"#ff333333\",\
+      textSize=\"15sp\",\
+    },\
+    {\
+      TextView,\
+      id=\"content\",\
+      textColor=\"#ff676767\",\
+      textSize=\"12sp\",\
+    },\
+  },\
+}\
+\
+onclick={\
+  function()\
+    import \"android.content.Intent\"\
+    import \"android.net.Uri\"\
+    url=\"https://www.coolapk.com/apk/com.android.tiebayunqiandao\"\
+    viewIntent = Intent(\"android.intent.action.VIEW\",Uri.parse(url))\
+    activity.startActivity(viewIntent)\
+  end,\
+  function()\
+    import \"android.content.Intent\"\
+    import \"android.net.Uri\"\
+    url=\"http://www.coolapk.com/u/536381\"\
+    viewIntent = Intent(\"android.intent.action.VIEW\",Uri.parse(url))\
+    activity.startActivity(viewIntent)\
+  end,\
+  function()\
+    import \"android.content.Intent\"\
+    import \"android.net.Uri\"\
+    url=\"http://www.coolapk.com/u/1230938\"\
+    viewIntent = Intent(\"android.intent.action.VIEW\",Uri.parse(url))\
+activity.startActivity(viewIntent)\
+  end,\
+  function()\
+    import \"android.content.Intent\"\
+    import \"android.net.Uri\"\
+    url=\"http://www.coolapk.com/u/453544\"\
+    viewIntent = Intent(\"android.intent.action.VIEW\",Uri.parse(url))\
+    activity.startActivity(viewIntent)\
+  end,\
+  function()\
+    对话框()\
+    .设置标题(\"加入官方群\")\
+    .设置消息(\"请选择一个群\")\
+    .设置积极按钮(\"加入where的圈子\",function()加QQ群(631105678)\
+    end)\
+    .设置中立按钮(\"不加群了，反正加群也不说话:-(\")\
+    .设置消极按钮(\"加入Fusion App-融应用\",function()加QQ群(165419162)\
+    end)\
+    .显示()\
+  end,\
+  function()\
+    分享文本(\"分享 贴吧云签到： 分享自@酷安网  https://www.coolapk.com/apk/com.android.tiebayunqiandao \")\
+  end,\
+  function()\
+  进入子页面(\"捐赠\")\
+  end\
+}\
+\
+adapter=LuaAdapter(this,adpd,items)\
+list.Adapter=adapter\
+list.onItemClick=function(adp,view,pos,id)\
+  if onclick[id] then\
+    onclick[id]()\
+  end\
+end\
+\
+\
+" ;
+      ["网页加载完毕"]	= "--网页加载完毕后执行的事件\
+\
+--接收参数\
+浏览器对象,网页链接=..." ;
+      ["网页即将加载"]	= "--浏览器即将加载新的网页时执行的事件\
+\
+--接收参数\
+浏览器对象,网页链接=..." ;
+      ["收到新标题"]	= "--浏览器加载新页面并获得新标题时执行的事件\
+\
+--接收参数\
+浏览器对象，新标题=..." ;
+      } ;
+  ["toolbar"]	= {
+      ["搜索URL"]	= "" ;
+      ["icon_btns"]	= {
+          } ;
+      ["搜索框提示"]	= "" ;
+      ["启用搜索功能"]	= false ;
+      ["menus"]	= {
+          } ;
+      ["输入栏模式"]	= false ;
+      } ;
+  ["switch"]	= {
+      ["横屏"]	= false ;
+      ["支持滑动页面"]	= false ;
+      ["显示状态栏"]	= true ;
+      ["启用启动图"]	= false ;
+      } ;
+  ["sidebar"]	= {
+      ["启用顶部图片"]	= false ;
+      ["启用"]	= false ;
+      ["items"]	= {
+          } ;
+      } ;
+  ["web_control"]	= {
+      } ;
+  ["view_attribute"]	= {
+      ["顶栏标题"]	= "Title" ;
+      ["顶栏高度"]	= "56dp" ;
+      ["搜索栏圆角弧度"]	= "2dp" ;
+      ["侧滑栏宽度"]	= "240dp" ;
+      ["搜索栏阴影强度"]	= "2dp" ;
+      ["顶栏阴影强度"]	= "2dp" ;
+      } ;
+  ["fltBtn"]	= {
+      ["显示"]	= false ;
+      ["点击事件"]	= "--悬浮按钮点击时执行的事件" ;
+      ["图标"]	= "" ;
+      } ;
+  } ;
