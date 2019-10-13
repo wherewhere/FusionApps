@@ -1,5 +1,6 @@
 # Fusion Apps
 基于Fusion App制作的网页套壳应用
+<a href="https://github.com/wherewhere/FusionApps/releases/latest"><img alt="GitHub All Releases" src="https://img.shields.io/github/downloads/wherewhere/FusionApps/total.svg?label=DOWNLOAD&logo=github&style=for-the-badge"></a>
 ## 使用方法
 [将源码导入FusionApp文件夹内](https://www.coolapk.com/feed/6170506?shareKey=OWJhM2I3Mjg2YzgyNWRhMjk3MGU~&shareUid=536381&shareFrom=com.coolapk.market_9.6)
 ![如图](http://image.coolapk.com/feed/2018/0415/536381_1523799927_6846@1080x2160.jpg.m.jpg)
