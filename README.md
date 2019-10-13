@@ -12,4 +12,7 @@
 ![贴吧Go](http://image.coolapk.com/apk_image/2019/1013/11/1570937093357-180576-o_1dn1icjlk1qo5qu813101qph1d6812-uid-536381@1084x1810.png)
 ![七天网络](http://image.coolapk.com/apk_image/2019/1001/00/1569859462696-179798-o_1dm1etosk10c6lnvgq21aoek2gu-uid-536381@1533x2560.png)
 ## 鸣谢
-FusionApp作者
+FusionApp作者[@寒歌](http://www.coolapk.com/u/675594)
+云签到作者[我很笨](http://www.coolapk.com/u/510022)
+应用介绍界面模板作者[@LuXts](http://www.coolapk.com/u/1230938)
+关于页面模板作者[@丨丨丨丨丨](http://www.coolapk.com/u/453544)
