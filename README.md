@@ -5,7 +5,7 @@
 <a href="https://pan.baidu.com/s/1xDsUzcT0pHj7_V5Kr8Pw4A"><img alt="Baidu" src="https://img.shields.io/badge/download-%e5%af%86%e7%a0%81%ef%bc%9alIlI-magenta.svg?label=%e4%b8%8b%e8%bd%bd&logo=baidu&style=for-the-badge"></a>
 
 ## 使用方法
-[将源码导入`FusionApp/Project`文件夹内](https://www.coolapk.com/feed/6170506?shareKey=OWJhM2I3Mjg2YzgyNWRhMjk3MGU~&shareUid=536381&shareFrom=com.coolapk.market_9.6)
+[将源码导入`/FusionApp/Project`文件夹内](https://www.coolapk.com/feed/6170506?shareKey=OWJhM2I3Mjg2YzgyNWRhMjk3MGU~&shareUid=536381&shareFrom=com.coolapk.market_9.6)
 ![如图](http://image.coolapk.com/feed/2018/0415/536381_1523799927_6846@1080x2160.jpg.m.jpg)
 ## 屏幕截图
 ![贴吧云签到](http://image.coolapk.com/apk_image/2019/0930/23/1569582604216-180208-o_1dm1e20v4185d12ubk9p3041mb6s-uid-536381@1533x2560.png)
