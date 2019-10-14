@@ -2,6 +2,9 @@
 基于Fusion App制作的网页套壳应用
 
 <a href="https://github.com/wherewhere/FusionApps/releases"><img alt="GitHub All Releases" src="https://img.shields.io/github/downloads/wherewhere/FusionApps/total.svg?label=DOWNLOAD&logo=github&style=for-the-badge"></a>
+Fusion Apps
+<a href="https://pan.baidu.com/s/1xDsUzcT0pHj7_V5Kr8Pw4A"><img alt="Baidu" src="https://img.shields.io/badge/download-%e5%af%86%e7%a0%81%ef%bc%9alIIl-magenta.svg?label=%e4%b8%8b%e8%bd%bd&logo=baidu&style=for-the-badge"></a>
+https://pan.baidu.com/s/1xDsUzcT0pHj7_V5Kr8Pw4A 密码：lIlI
 ## 使用方法
 [将源码导入FusionApp文件夹内](https://www.coolapk.com/feed/6170506?shareKey=OWJhM2I3Mjg2YzgyNWRhMjk3MGU~&shareUid=536381&shareFrom=com.coolapk.market_9.6)
 ![如图](http://image.coolapk.com/feed/2018/0415/536381_1523799927_6846@1080x2160.jpg.m.jpg)
